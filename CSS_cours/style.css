@@ -1,0 +1,162 @@
+/* Fil rouge : selecteur, dimensions, couleurs */
+/* Texte */
+/* Background */
+/* Boxes */
+/* Positioning */
+/* Flex */
+/* Grid */
+/* Pseudo classe */
+/* Débug */
+/* Responsive */
+
+@font-face{
+  font-family: "font1";
+  src : url(./assets/Rajdhani-Medium.ttf);
+}
+
+h1{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  color: rgb(248, 248, 248);
+  text-shadow: 6px -6px 5px #1d1d1f;
+  text-align: center;
+  font-family: 'font1', 'Courier New', Courier, monospace;
+}
+
+body{
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(194, 216, 245);
+  background: url(bg.jpg) fixed center/cover;
+}
+
+main{
+  color: rgb(84, 123, 155);
+  background-color: #ffffff;
+  width: 95%;
+  margin: 15px 10px 5px 10px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.positioning, .flexbox, .grid{
+  border: 2px solid #87ceeb;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+/*************POSITIONING***************/
+.positioning{
+  position: relative;
+}
+
+#cercle{
+  background-color: aliceblue;
+  position: absolute;
+  height: 15px;
+  width: 100px;
+  left: 50%;
+  text-align: center;
+  bottom: 50%;
+  transform: translateX(-50%);
+  padding: auto;
+}
+
+/**************FLEXBOX**************/
+ul{
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+li{
+  list-style-type: none;
+  font-size: small;
+  height: 80px;
+  width: 30%;
+  background-color: azure;
+  /*Centrer verticalement*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***************Grid******************/
+.grid-container{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 20px;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+    'i1 i2'
+    'ta ta'
+    'bt bt';
+}
+
+#firstname{
+  grid-area: i1;
+}
+
+#lastname{
+  grid-area: i2;
+}
+
+textarea{
+  grid-area: ta;
+  resize: none;
+}
+
+input[type="submit"]{
+  grid-area: bt;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: #87ceeb;
+}
+
+input, textarea{
+  margin: 5px;
+  height: 45px;
+  border: 1px solid darkblue;
+  padding: 10px;
+  font-family: "font-1";
+  font-size: 90%;
+  border-radius: 5px;
+}
+input[type="submit"]:hover{
+  background-color: aqua;
+  color: white;
+}
+
+/***************** Responsive *****************/
+@media screen and (max-width: 720px) {
+  .grid-container{
+    display: block;
+  }
+  .img{
+    text-align: center;
+  }
+} 
+
+@media screen and (max-width: 530px) {
+  .grid-container{
+    display: block;
+  }
+  .img{
+    text-align: center;
+  }
+  form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      'i1'
+      'i2'
+      'ta'
+      'bt';
+  }
+} 
